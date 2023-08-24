@@ -5,18 +5,173 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   
   <title>Frontend Mentor | Product preview card component</title>
 
   <!-- aqui va tus CSS 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
+    <style>
+    .attribution {
+      font-size: 11px;
+     text-align: center;
+     margin-top: auto; /* Empuja el atributo hacia abajo */
+    }
     .attribution a { color: hsl(228, 45%, 44%); }
+  @media (max-width: 375px) {
+    body {
+      width: 375px;
+      margin: 0 auto;
+    }
+    }
+
+  @media (min-width: 376px) {
+    body {
+      width: 1440px;
+      margin: 0 auto;
+    }
+  }
+  :root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cream);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+  }
+  
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.left {
+  flex: 1;
+  padding: 10px;
+  background-color: var(--dark-cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.right {
+  flex: 1;
+  padding: 10px;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.right h2 {
+  color: var(--dark-grayish-blue);
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+}
+
+.price {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.discounted-price {
+  font-size: 24px;
+  color: var(--dark-cyan);
+  margin-right: 10px;
+}
+
+.original-price {
+  font-size: 18px;
+  color: var(--dark-grayish-blue);
+  text-decoration: line-through;
+}
+
+.add-to-cart {
+  margin-top: 20px;
+}
+
+.cart-button {
+  background-color: var(--dark-cyan);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cart-button i {
+  margin-right: 10px;
+}
+
+@media (max-width: 375px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    flex: 1;
+  }
+}
   </style>
 <body>
-  
-  <div class="attribution">
-    Autor del ejercicio <a href="#">Tu nombre aquí</a>.
+  <div class="page-container">
+    <div class="container">
+      <div class="left">
+        <img src="images/image-product-desktop.jpg" alt="Imagen">
+      </div>
+      <div class="right">
+        <h2>PERFUME</h2>
+        <h1>Gabrielle Essence Eau de Parfum</h1>
+        <p>A floral, solar and voluptuous interpretation composed by Oliver Polge, Perfumer-Creator for the House of CHANEL</p>
+        <div class="price">
+          <span class="discounted-price">$149.99</span>
+          <span class="original-price">$169.99</span>
+        </div>
+        <div class="add-to-cart">
+          <button class="cart-button">
+            <i class="fas fa-shopping-cart"></i> Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Autor del ejercicio <a href="#">Juan Esteban Pinilla Aguilera</a>.
+    </div>
   </div>
 </body>
 </html>
